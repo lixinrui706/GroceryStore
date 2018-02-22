@@ -19,7 +19,7 @@ int main()
   cin>>input;
   if(input =='A'||input =='a')
   {
-  cout<<"\nWhat is the item?";
+  cout<<"What is the item?";
   if(numItems != 5)
   {
   cin>>list[numItems];
