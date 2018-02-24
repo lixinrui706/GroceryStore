@@ -28,7 +28,7 @@ int main()
   }
   else
   {
-  cout<<"\nYou'll need a bigger list!"<<endl;
+  cout<<"You'll need a bigger list!"<<endl;
   }
   }
   }while(!(input == 'Q'||input == 'q'));
