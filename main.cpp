@@ -1,6 +1,7 @@
 //Author :Xinrui Li
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 int main()
@@ -9,6 +10,8 @@ int main()
   int numItems = 0;
   char input;
   string item;
+  vector<string> newitem; 
+
   do
   {
     cout<<"\n==GROCERY LIST MANAGER==";
@@ -19,24 +22,26 @@ int main()
     cin>>input;
    if(input =='A'||input =='a')
    {
-    cout<<"What is the item?"<<endl;
-    cin>>item; 
-    if(numItems < 5)
-    {
-     list[numItems] = item;
-     numItems++;
-     }
-    else
-    {
-     cout<<"You'll need a bigger list!"<<endl;
-     }
-    }
+        cout<<"What is the item?"<<endl;
+        cin>>item; 
+
+        newitem.push_back(item);
+        numItems++;
+    }    
+    
+
   }while(!(input == 'q'||input == 'Q'));
-   cout<<"==ITEMS TO BUY=="<<endl;
-   for ( int x=0; x< 5; x++)
-   {
-  
-   cout<<x+1<<" "<<list[x]<<endl;
+  if (newitem.empty() == true)
+  {
+      cout<<"No items to buy!"<<endl;
    }
+   else
+   {
+   cout<<"==ITEMS TO BUY=="<<endl;
+      for ( int x=0; x<numItems; x++)
+      {
+         cout<<x+1<<" "<<newitem[x]<<endl;
+       }
+    }   
   return 0;
 }
